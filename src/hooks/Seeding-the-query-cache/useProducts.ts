@@ -25,9 +25,8 @@ const useGetProductDetail = () => {
   const query = useQuery({
     queryKey: ["product-detail", id],
     queryFn: id ? () => getProductDetail(id) : skipToken,
-
-    staleTime: 5000,
-    gcTime: 5000,
+    staleTime: 1000 * 60,
+    gcTime: 1000 * 60 * 5,
   });
   return { ...query, setId };
 };

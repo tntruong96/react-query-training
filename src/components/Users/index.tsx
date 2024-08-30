@@ -1,18 +1,18 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { useGetAllUser } from "../../hooks/Seeding-the-query-cache/useUsers";
-import { useGetAllProduct } from "../../hooks/Seeding-the-query-cache/useProducts";
 
 const Users = () => {
-  const { data, isSuccess, isLoading } = useGetAllUser();
+  const { data, isLoading } = useGetAllUser();
   // const { data: productsData } = useGetAllProduct();
-  console.log(data);
 
   if (isLoading) return <>Loading</>;
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
       {data.map((user: any) => (
-        <div key={user.id}>{user.username}</div>
+        <Link to={`/user/${user?.id}`} key={user.id}>
+          {user.username}
+        </Link>
       ))}
     </div>
   );

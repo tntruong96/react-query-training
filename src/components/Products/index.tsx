@@ -1,18 +1,15 @@
-import { QueryClient, useQueryClient } from "@tanstack/react-query";
-import React from "react";
-import { getAllProduct } from "../../services/product.service";
+import { Link } from "react-router-dom";
 import {
   useGetAllProduct,
   useGetProductDetail,
 } from "../../hooks/Seeding-the-query-cache/useProducts";
-import { Link } from "react-router-dom";
 // const productQuery = { queryKey: ["prefetch-product"], queryFn: getAllProduct };
 // const queryClient = new QueryClient();
 // queryClient.prefetchQuery(productQuery);
 
 const Product = () => {
   const { data } = useGetAllProduct();
-  const { data: dataDetail, setId } = useGetProductDetail();
+  const { setId } = useGetProductDetail();
 
   return (
     <div

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useGetProductDetail } from "../../hooks/Seeding-the-query-cache/useProducts";
 

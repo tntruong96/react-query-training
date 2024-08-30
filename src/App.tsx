@@ -1,10 +1,6 @@
-import React, { Suspense } from "react";
-
-import "./App.css";
-import { ErrorBoundary } from "react-error-boundary";
-import Users from "./components/Users";
-import Navigation from "./components/Navigation";
 import { Outlet } from "react-router-dom";
+import "./App.css";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
